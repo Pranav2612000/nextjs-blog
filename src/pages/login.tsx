@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Input from '../components/form/Input.tsx';
+import Input from '../components/form/Input';
 const Login = () => {
   return (
     <div className="flex items-top w-full bg-blue-50">
