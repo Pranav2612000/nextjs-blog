@@ -1,3 +1,67 @@
 @tailwind base;
 @tailwind components;
+
+@font-face {
+  font-family: 'SFProDisplay-Regular';
+  src: url("../../public/assets/fonts/SFProDisplay-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'SFProDisplay-Bold';
+  src: url("../../public/assets/fonts/SFProDisplay-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'SFProDisplay-Light';
+  src: url("../../public/assets/fonts/SFProDisplay-Light.ttf");
+}
+
+@font-face {
+  font-family: 'SFProDisplay-SemiBold';
+  src: url("../../public/assets/fonts/SFProDisplay-SemiBold.ttf");
+}
+
 @tailwind utilities;
+
+.login-input {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.searchformfld{
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.searchformfld label{
+    position: absolute;
+    top:15px;
+    left: 5px;
+    cursor: text;
+    pointer-events: none;
+    color: rgba(45, 45, 45, 0.5);
+}
+.searchformfld input:focus + label,.searchformfld input:not(:placeholder-shown) + label{
+    opacity:1;
+    transform: scale(.9) translateY(-100%) translateX(-10px);
+}
+.searchformfld input:focus{
+    /*border:1px solid #000;*/
+    outline-color: #000;
+    color: #000;
+}
+.searchformfld input[type="password"] {
+    font-family: caption;
+}
+.searchformfld{
+    padding-top: 15px;
+}
+.searchformfld input{
+    width:100%;
+    padding-left: 10px;
+    color: #000;
+}
+.searchformfld label,.searchformfld input{
+    transition: all 0.2s;
+    transition-timing-function: ease;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
