@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react"; 
+import Link from 'next/link';
 import Image from 'next/image';
+
 import Input from '../components/form/Input';
 import LoginSignupBtn from '../components/LoginSignupBtn';
 import {isEmailValid, isMobNoValid, isPasswordValid} from '../utils/validations';
@@ -44,7 +46,9 @@ const Login = () => {
               </div>
               <div className="mt-10">
                 <span className="font-sfprolight">New to Stamp my visa?</span>
-                <span className="mx-2 font-sfprobold text-green-700"> Sign Up</span>
+                <Link href="/signup">
+                  <span className="cursor-pointer mx-2 font-sfprobold text-green-700"> Sign Up</span>
+                </Link>
               </div>
           </div>
           <div className="mt-5 w-full">

@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from "react"; 
+import Link from 'next/link';
 import Image from 'next/image';
+
 import Input from '../components/form/Input';
 import LoginSignupBtn from '../components/LoginSignupBtn';
 import {isNameValid, isEmailValid, isMobNoValid, isPasswordValid} from '../utils/validations';
+
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -49,7 +52,9 @@ const SignUp = () => {
               </div>
               <div className="mt-10">
                 <span className="font-sfprolight">Already onboard?</span>
-                <span className="mx-2 font-sfprobold text-green-700"> Login</span>
+                <Link href="/login">
+                  <span className="cursor-pointer mx-2 font-sfprobold text-green-700"> Login</span>
+                </Link>
               </div>
           </div>
           <div className="mt-5 w-full">
