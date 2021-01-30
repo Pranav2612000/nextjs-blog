@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Image from 'next/image';
 import Input from '../components/form/Input';
 import LoginSignupBtn from '../components/LoginSignupBtn';
+import {isNameValid, isEmailValid, isMobNoValid, isPasswordValid} from '../utils/validations';
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -19,34 +20,6 @@ const SignUp = () => {
       setIsDataValid(false);
     }
   }, [name, email, mobNo, password]);
-
-  const isNameValid = (name) => {
-    if(name === "") {
-      return false;
-    }
-    return true;
-  };
-
-  const isEmailValid = (email) => {
-    if(email === "") {
-      return false;
-    }
-    return true;
-  }
-
-  const isMobNoValid = (mobNo) => {
-    if(mobNo === "") {
-      return false;
-    }
-    return true;
-  }
-
-  const isPasswordValid = (password) => {
-    if(password === "") {
-      return false;
-    }
-    return true;
-  }
 
   return (
     <div className="flex items-top w-full bg-blue-50">
