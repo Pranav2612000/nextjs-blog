@@ -25,3 +25,10 @@ export const isPasswordValid = (password) => {
   }
   return true;
 }
+
+export const isOTPValid = (otp) => {
+  if(otp === "") {
+    return false;
+  }
+  return true;
+}
