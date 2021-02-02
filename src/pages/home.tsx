@@ -1,5 +1,6 @@
 import React from 'react';
 import Hello from '../components/Home/Hello';
+import OngoingVisas from '../components/Home/OngoingVisas';
 
 const Home = () => {
   return (
@@ -9,6 +10,9 @@ const Home = () => {
           <img src="/assets/images/Home-top.png" alt="home-header" className="w-full"/>
         </div>
         <Hello/>
+        <div>
+          <OngoingVisas/>
+        </div>
       </div>
     </div>
   );
