@@ -6,7 +6,7 @@ const OngoingVisas = () => {
     <div className="mx-5">
       <div className="px-5 py-5 bg-green-600 text-white">
         <div>
-          <div className="font-sfprobold text-xl mb-2">
+          <div className="font-sfprobold text-2xl mb-2">
             Ongoing Visas
           </div>
           <div className="font-sfprolight text-sm pr-10">

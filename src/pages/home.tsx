@@ -1,6 +1,7 @@
 import React from 'react';
 import Hello from '../components/Home/Hello';
 import OngoingVisas from '../components/Home/OngoingVisas';
+import MostCommonVisas from '../components/Home/MostCommonVisas';
 
 const Home = () => {
   return (
@@ -12,6 +13,9 @@ const Home = () => {
         <Hello/>
         <div>
           <OngoingVisas/>
+        </div>
+        <div>
+          <MostCommonVisas/>
         </div>
       </div>
     </div>
