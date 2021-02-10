@@ -6,6 +6,7 @@ import FreshBlogs from '../components/Home/FreshBlogs';
 import Testimonials from '../components/Home/Testimonials';
 import WhySMV from '../components/Home/WhySMV';
 import Process from '../components/Home/Process';
+import FAQs from '../components/Home/FAQs';
 
 const Home = () => {
   return (
@@ -32,6 +33,9 @@ const Home = () => {
         </div>
         <div>
           <Process/>
+        </div>
+        <div>
+          <FAQs/>
         </div>
       </div>
     </div>
