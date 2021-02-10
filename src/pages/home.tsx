@@ -5,6 +5,7 @@ import MostCommonVisas from '../components/Home/MostCommonVisas';
 import FreshBlogs from '../components/Home/FreshBlogs';
 import Testimonials from '../components/Home/Testimonials';
 import WhySMV from '../components/Home/WhySMV';
+import Process from '../components/Home/Process';
 
 const Home = () => {
   return (
@@ -28,6 +29,9 @@ const Home = () => {
         </div>
         <div>
           <WhySMV/>
+        </div>
+        <div>
+          <Process/>
         </div>
       </div>
     </div>

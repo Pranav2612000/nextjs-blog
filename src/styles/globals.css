@@ -23,6 +23,15 @@
 
 @tailwind utilities;
 
+@layer utilities {
+  .bg-ochre-200 {
+    background-color: #e4c17e;
+  }
+  .bg-ochre-400 {
+    background-color: #be9a56;
+  }
+}
+
 .login-input {
   border-bottom: 1px solid #e6e6e6;
 }
