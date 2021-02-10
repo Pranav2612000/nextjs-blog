@@ -3,6 +3,7 @@ import Hello from '../components/Home/Hello';
 import OngoingVisas from '../components/Home/OngoingVisas';
 import MostCommonVisas from '../components/Home/MostCommonVisas';
 import FreshBlogs from '../components/Home/FreshBlogs';
+import Testimonials from '../components/Home/Testimonials';
 
 const Home = () => {
   return (
@@ -20,6 +21,9 @@ const Home = () => {
         </div>
         <div>
           <FreshBlogs/>
+        </div>
+        <div>
+          <Testimonials/>
         </div>
       </div>
     </div>
