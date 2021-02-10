@@ -2,6 +2,7 @@ import React from 'react';
 import Hello from '../components/Home/Hello';
 import OngoingVisas from '../components/Home/OngoingVisas';
 import MostCommonVisas from '../components/Home/MostCommonVisas';
+import FreshBlogs from '../components/Home/FreshBlogs';
 
 const Home = () => {
   return (
@@ -16,6 +17,9 @@ const Home = () => {
         </div>
         <div>
           <MostCommonVisas/>
+        </div>
+        <div>
+          <FreshBlogs/>
         </div>
       </div>
     </div>
