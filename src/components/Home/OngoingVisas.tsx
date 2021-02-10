@@ -3,7 +3,7 @@ import OngoingVisasCard from './OngoingVisasCard';
 
 const OngoingVisas = () => {
   return (
-    <div className="mx-5">
+    <div className="mx-5 mt-10">
       <div className="px-5 py-5 bg-green-600 text-white">
         <div>
           <div className="font-sfprobold text-2xl mb-2">

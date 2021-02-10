@@ -4,6 +4,7 @@ import OngoingVisas from '../components/Home/OngoingVisas';
 import MostCommonVisas from '../components/Home/MostCommonVisas';
 import FreshBlogs from '../components/Home/FreshBlogs';
 import Testimonials from '../components/Home/Testimonials';
+import WhySMV from '../components/Home/WhySMV';
 
 const Home = () => {
   return (
@@ -24,6 +25,9 @@ const Home = () => {
         </div>
         <div>
           <Testimonials/>
+        </div>
+        <div>
+          <WhySMV/>
         </div>
       </div>
     </div>
