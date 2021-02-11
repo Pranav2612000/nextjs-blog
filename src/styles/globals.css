@@ -30,6 +30,12 @@
   .bg-ochre-400 {
     background-color: #be9a56;
   }
+  .text-golden-400 {
+    color: #dcbf89
+  }
+  .border-1 {
+    border-width: 1px;
+  }
 }
 
 .login-input {
