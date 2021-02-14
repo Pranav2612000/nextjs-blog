@@ -1,6 +1,7 @@
 import React from "react";
 import Datepicker from "../../components/form/Datepicker";
 import Numberpicker from "../../components/form/Numberpicker";
+import Button from "../../components/form/Button";
 
 const Form = () => {
   return (
@@ -10,8 +11,13 @@ const Form = () => {
           <div>
             <Numberpicker label="Select no. of travellers"/>
           </div>
+          <div className="h-px bg-black bg-gray-100">
+          </div>
           <div>
             <Datepicker label="Select duration"/>
+          </div>
+          <div>
+            <Button text="Done" isDataValid={true}/> 
           </div>
         </div>
       </div>

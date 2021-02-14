@@ -142,7 +142,7 @@ const Datepicker = (props) => {
   }
 
   return (
-    <div>
+    <div className="my-7">
       <div className="font-sfprolight text-2xl text-gray-500 pt-10 pl-5">
         {props.label}
       </div>
