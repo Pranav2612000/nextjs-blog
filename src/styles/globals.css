@@ -24,6 +24,9 @@
 @tailwind utilities;
 
 @layer utilities {
+  .bg-ochre-100 {
+    background-color: #f2e3bb;
+  }
   .bg-ochre-200 {
     background-color: #e4c17e;
   }
