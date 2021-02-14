@@ -6,8 +6,8 @@ import Button from "../../components/form/Button";
 const Form = () => {
   return (
     <div className="flex items-top w-full bg-blue-50">
-      <div className="w-full bg-white rounded shadow-lg md:max-w-sm md:mx-auto md:mt-5 md:mb-5">
-        <div className="bg-white">
+      <div className="w-full bg-black rounded shadow-lg md:max-w-sm md:mx-auto md:mt-5 md:mb-5">
+        <div className="bg-white relative top-20">
           <div>
             <Numberpicker label="Select no. of travellers"/>
           </div>
