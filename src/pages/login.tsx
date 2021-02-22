@@ -5,12 +5,25 @@ import Image from 'next/image';
 import PasswordLogin from '../components/Login/PasswordLogin';
 import OTPLogin from '../components/Login/OTPLogin';
 import LoginSignupBtn from '../components/LoginSignupBtn';
+import {isEmailValid, isMobNoValid, isPasswordValid} from '../utils/validations';
 
 const Login = () => {
   const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [isDataValid, setIsDataValid] = useState(false);
   const [loginType, setLoginType] = useState(0); // 0 - password, 1 - OTP
 
+  useEffect(() => {
+    if(loginType === 0) {
+      if((isEmailValid(username) || 
+         isMobNoValid(username)) &&
+         isPasswordValid(password)) {
+        setIsDataValid(true);
+      } else {
+        setIsDataValid(false);
+      }
+    }
+  }, [username, password]);
 
   return (
     <div className="flex items-top w-full bg-blue-50">
@@ -21,7 +34,7 @@ const Login = () => {
       <form>
         <div className="mx-5 my-10">
           { loginType == 0 ? (
-              <PasswordLogin username={username} setUsername={setUsername} setIsDataValid={setIsDataValid} setLoginType={setLoginType}/>
+              <PasswordLogin username={username} setUsername={setUsername} password={password} setPassword={setPassword} setIsDataValid={setIsDataValid} setLoginType={setLoginType}/>
             ) : (
               <OTPLogin username={username} setIsDataValid={setIsDataValid}/>
             )

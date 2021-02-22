@@ -1,20 +1,8 @@
 import React, {useState, useEffect} from "react"; 
 
 import Input from '../form/Input';
-import {isEmailValid, isMobNoValid, isPasswordValid} from '../../utils/validations';
 
 const PasswordLogin = (props) => {
-  const [password, setPassword] = useState("");
-
-  useEffect(() => {
-    if((isEmailValid(props.username) || 
-       isMobNoValid(props.username)) &&
-       isPasswordValid(password)) {
-      props.setIsDataValid(true);
-    } else {
-      props.setIsDataValid(false);
-    }
-  }, [props.username, password]);
 
   const loginWithOTP = () => {
     if(!isMobNoValid(props.username)) {
@@ -36,7 +24,7 @@ const PasswordLogin = (props) => {
         <Input type="text" placeholder="Phone no. or email address" value={props.username} onChange={props.setUsername}/>
       </div>
       <div className="mt-1">
-        <Input type="password" placeholder="Password" value={password} onChange={setPassword}/>
+        <Input type="password" placeholder="Password" value={props.password} onChange={props.setPassword}/>
       </div>
       <div className="text-right">
         <span className="cursor-pointer font-sfprosemibold text-blue-600 text-sm" onClick={loginWithOTP}>Login with OTP instead</span>
