@@ -10,7 +10,7 @@ export const loginMock = async ({username, password}) => {
 
 export const OTPLoginMock = async ({username, otp}) => {
   await delay(3000);
-  if(username === "pranav" && otp = "1111") {
+  if(username === "pranav" && otp === "1111") {
     return true;
   }
   return false;
