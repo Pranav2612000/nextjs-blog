@@ -1,21 +1,8 @@
 import React, {useState, useEffect} from "react"; 
 
 import Input from '../form/Input';
-import {isEmailValid, isMobNoValid, isOTPValid} from '../../utils/validations';
 
 const OTPLogin = (props) => {
-  const [otp, setOTP] = useState("");
-
-  useEffect(() => {
-    if((isEmailValid(props.username) || 
-       isMobNoValid(props.username)) &&
-       isOTPValid(otp)) {
-      props.setIsDataValid(true);
-    } else {
-      props.setIsDataValid(false);
-    }
-  }, [props.username, otp]);
-
   return (
     <>
       <div className="font-sfprobold text-2xl my-2">
@@ -30,7 +17,7 @@ const OTPLogin = (props) => {
       </div>
       */}
       <div className="mt-1 mb-40">
-        <Input type="text" placeholder="Enter the OTP" value={otp} onChange={setOTP}/>
+        <Input type="text" placeholder="Enter the OTP" value={props.otp} onChange={props.setOTP}/>
       </div>
     </>
   )

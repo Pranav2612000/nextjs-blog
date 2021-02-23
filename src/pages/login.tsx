@@ -6,15 +6,16 @@ import PasswordLogin from '../components/Login/PasswordLogin';
 import OTPLogin from '../components/Login/OTPLogin';
 import LoginSignupBtn from '../components/LoginSignupBtn';
 import ErrorModal from '../components/layout/ErrorModal';
-import {isEmailValid, isMobNoValid, isPasswordValid} from '../utils/validations';
+import {isEmailValid, isMobNoValid, isPasswordValid, isOTPValid} from '../utils/validations';
 
-import {loginMock} from '../mocks/login.js';
+import {loginMock, OTPLoginMock} from '../mocks/login';
 
 const Login = () => {
   const router = useRouter();
   
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [otp, setOTP] = useState("");
   const [isDataValid, setIsDataValid] = useState(false);
   const [loginType, setLoginType] = useState(0); // 0 - password, 1 - OTP
   const [loading, setLoading] = useState(false);
@@ -30,16 +31,36 @@ const Login = () => {
       } else {
         setIsDataValid(false);
       }
+    } else if(loginType === 1) {
+      if((isEmailValid(username) || 
+         isMobNoValid(username)) &&
+         isOTPValid(otp)) {
+        setIsDataValid(true);
+      } else {
+        setIsDataValid(false);
+      }
     }
-  }, [username, password]);
+  }, [username, password, otp]);
 
   const login = () => {
     if(loginType === 0) {
-      passwordLogin();
+      sendPasswordLoginRequest();
+    } else if(loginType === 1) {
+      sendOTPLoginRequest();
     }
   }
 
-  const passwordLogin = async () => {
+  const loginSuccessful = () => {
+    router.push("/home");
+  };
+
+  const loginFailed = (err) => {
+    setLoading(false);
+    setError(true);
+    setErrorMsg(err.message);
+  };
+
+  const sendPasswordLoginRequest = async () => {
     const body = {
       username,
       password,
@@ -47,11 +68,29 @@ const Login = () => {
     setLoading(true);
     const res = await loginMock(body);
     if(res === true) {
-      router.push("/home");
+      loginSuccessful();
     } else {
-      setLoading(false);
-      setError(true);
-      setErrorMsg("Incorrect Username or Password");
+      const err = {
+        message: "Incorrect Username or Password"
+      }
+      loginFailed(err);
+    }
+  }
+
+  const sendOTPLoginRequest = async() => {
+    const body = {
+      username,
+      otp,
+    }
+    setLoading(true);
+    const res = await OTPLoginMock(body);
+    if(res === true) {
+      loginSuccessful();
+    } else {
+      const err = {
+        message: "Incorrect otp" 
+      }
+      loginFailed(err);
     }
   }
 
@@ -66,7 +105,7 @@ const Login = () => {
             { loginType == 0 ? (
                 <PasswordLogin username={username} setUsername={setUsername} password={password} setPassword={setPassword} setIsDataValid={setIsDataValid} setLoginType={setLoginType}/>
               ) : (
-                <OTPLogin username={username} setIsDataValid={setIsDataValid}/>
+                <OTPLogin username={username} otp={otp} setOTP={setOTP} setIsDataValid={setIsDataValid}/>
               )
             }
 
